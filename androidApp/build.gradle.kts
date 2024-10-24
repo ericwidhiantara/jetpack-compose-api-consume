@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.compose.compiler)
     id("com.google.devtools.ksp")
+
+    id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -64,4 +67,11 @@ dependencies {
     implementation(libs.androidx.room.runtime) // Check for the latest version
     ksp(libs.androidx.room.compiler) // Use KSP for annotation processing
 
+    // For Hilt Dependency Injection
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    ksp(libs.androidx.hilt.compiler)
+
+    // For ViewModel injection in Compose
+    implementation(libs.androidx.hilt.navigation.compose)
 }

@@ -1,7 +1,11 @@
 [versions]
 agp = "8.5.1"
 arrowCore = "<latest-version>"
+hiltAndroid = "2.51.1"
+hiltCompiler = "2.46.1"
+hiltNavigationCompose = "1.2.0"
 hiveAndroid = "2.1.0"
+koinCore = "3.5.0"
 kotlin = "2.0.0"
 compose = "1.5.4"
 compose-material3 = "1.1.2"
@@ -15,6 +19,8 @@ roomRuntimeVersion = "2.5.1"
 runtimeLivedata = "1.7.4"
 
 [libraries]
+androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltNavigationCompose" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-compiler-v250 = { module = "androidx.room:room-compiler", version.ref = "roomCompilerVersion" }
 androidx-room-compiler-v251 = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
@@ -23,8 +29,15 @@ androidx-room-runtime-v251 = { module = "androidx.room:room-runtime", version.re
 androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "runtimeLivedata" }
 arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrowCore" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltCompiler" }
 hive = { module = "io.hive:hive", version.ref = "hiveAndroid" }
 hive-android = { module = "io.hive:hive-android", version.ref = "hiveAndroid" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinCore" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinCore" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinCore" }
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koinCore" }
+koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koinCore" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }

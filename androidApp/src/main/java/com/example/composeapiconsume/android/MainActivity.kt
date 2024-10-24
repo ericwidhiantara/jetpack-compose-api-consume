@@ -13,10 +13,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.composeapiconsume.Greeting
 import com.example.composeapiconsume.android.utils.services.room.MainBoxMixin
 import com.example.composeapiconsume.android.utils.services.room.entity.UserLoginEntity
+import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+@HiltAndroidApp
 class MainActivity : ComponentActivity() {
     private lateinit var mainBoxMixin: MainBoxMixin
 

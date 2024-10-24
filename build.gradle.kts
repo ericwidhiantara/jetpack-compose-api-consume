@@ -6,5 +6,6 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform).apply(false)
     alias(libs.plugins.compose.compiler).apply(false)
     id("com.google.devtools.ksp") version "1.9.0-1.0.11" apply false
-    
+    id("com.google.dagger.hilt.android") version "2.46.1" apply false
+
 }
