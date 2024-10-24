@@ -3,6 +3,9 @@ package com.example.composeapiconsume.android.core.api
 import com.example.composeapiconsume.android.core.error.Failure
 import com.example.composeapiconsume.android.core.error.ServerFailure
 import com.example.composeapiconsume.android.core.error.UnauthorizedFailure
+import com.example.composeapiconsume.android.utils.helper.Either
+import com.example.composeapiconsume.android.utils.helper.Left
+import com.example.composeapiconsume.android.utils.helper.Right
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -121,7 +124,3 @@ data class ApiResponse(
     val data: Any?
 )
 
-// com.example.composeapiconsume.android.core.api.Either class implementation
-sealed class Either<out L, out R>
-data class Left<out L>(val value: L) : Either<L, Nothing>()
-data class Right<out R>(val value: R) : Either<Nothing, R>()

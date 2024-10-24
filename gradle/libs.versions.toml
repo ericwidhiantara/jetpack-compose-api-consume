@@ -1,16 +1,30 @@
 [versions]
 agp = "8.5.1"
 arrowCore = "<latest-version>"
+hiveAndroid = "2.1.0"
 kotlin = "2.0.0"
 compose = "1.5.4"
 compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
 okhttp = "4.12.0"
 retrofit = "2.11.0"
+roomCompiler = "2.5.1"
+roomCompilerVersion = "2.5.0"
+roomRuntime = "2.6.1"
+roomRuntimeVersion = "2.5.1"
+runtimeLivedata = "1.7.4"
 
 [libraries]
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
+androidx-room-compiler-v250 = { module = "androidx.room:room-compiler", version.ref = "roomCompilerVersion" }
+androidx-room-compiler-v251 = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+androidx-room-runtime-v251 = { module = "androidx.room:room-runtime", version.ref = "roomRuntimeVersion" }
+androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "runtimeLivedata" }
 arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrowCore" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+hive = { module = "io.hive:hive", version.ref = "hiveAndroid" }
+hive-android = { module = "io.hive:hive-android", version.ref = "hiveAndroid" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }

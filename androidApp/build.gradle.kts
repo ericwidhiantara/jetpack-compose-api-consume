@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.compose.compiler)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -58,5 +59,9 @@ dependencies {
 
     // Arrow
     implementation(libs.arrow.core)
+
+    // Room
+    implementation(libs.androidx.room.runtime) // Check for the latest version
+    ksp(libs.androidx.room.compiler) // Use KSP for annotation processing
 
 }
