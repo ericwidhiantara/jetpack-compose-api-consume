@@ -1,4 +1,4 @@
-package com.example.composeapiconsume.android
+package com.example.composeapiconsume.android.features.main
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

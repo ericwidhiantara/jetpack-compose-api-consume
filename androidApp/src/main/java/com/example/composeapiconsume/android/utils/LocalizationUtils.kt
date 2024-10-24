@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
-import com.example.composeapiconsume.android.MainActivity
+import com.example.composeapiconsume.android.features.main.MainActivity
 import java.util.Locale
 
 object LocalizationUtils {

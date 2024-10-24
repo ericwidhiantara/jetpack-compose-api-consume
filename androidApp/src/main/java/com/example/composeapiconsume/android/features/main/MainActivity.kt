@@ -1,4 +1,4 @@
-package com.example.composeapiconsume.android
+package com.example.composeapiconsume.android.features.main
 
 import LoginViewModel
 import android.os.Bundle
