@@ -51,6 +51,7 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom.v2))
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.foundation.layout.android)
     androidTestImplementation(platform(libs.androidx.compose.bom))
 
     // Compose Ui
