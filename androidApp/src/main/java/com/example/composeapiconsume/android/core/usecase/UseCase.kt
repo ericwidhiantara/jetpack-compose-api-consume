@@ -1,7 +1,7 @@
 package com.example.composeapiconsume.android.core.usecase
 
-import com.example.composeapiconsume.android.core.api.Either
 import com.example.composeapiconsume.android.core.error.Failure
+import com.example.composeapiconsume.android.utils.helper.Either
 
 // Assuming `Failure` is already defined in your codebase.
 abstract class UseCase<Type, Params> {

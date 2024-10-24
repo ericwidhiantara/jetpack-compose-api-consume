@@ -1,7 +1,7 @@
 package com.example.composeapiconsume.android.core.di
 
-import com.example.composeapiconsume.android.core.api.ApiService
 import com.example.composeapiconsume.android.core.api.RetrofitInterceptor
+import com.example.composeapiconsume.android.utils.services.room.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,36 +1,19 @@
 package com.example.composeapiconsume.android.core.di
 
+import com.example.composeapiconsume.android.features.auth.data.datasources.AuthRemoteDataSource
+import com.example.composeapiconsume.android.features.auth.data.datasources.AuthRemoteDataSourceImpl
+import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
-//    //DataSources
-//    @Singleton
-//    @Provides
-//    fun providesMovieRemoteDataSource(
-//        api: MovieApi
-//    ): MovieRemoteDataSource {
-//        return MovieRemoteDataSourceImpl(api)
-//    }
-//
-//    // Repositories
-//    @Singleton
-//    @Provides
-//    fun providesMovieRepository(
-//        movieRemoteDataSource: MovieRemoteDataSource
-//    ): MovieRepository {
-//        return MovieRepositoryImpl(movieRemoteDataSource)
-//    }
-//
-//    // UseCases
-//    @Singleton
-//    @Provides
-//    fun providesGetMoviesUseCase(
-//        movieRepository: MovieRepository
-//    ): GetMoviesUseCase {
-//        return GetMoviesUseCase(movieRepository)
-//    }
+abstract class AppModule {
+    @Binds
+    @Singleton
+    abstract fun bindAuthRemoteDataSource(
+        authRemoteDataSourceImpl: AuthRemoteDataSourceImpl
+    ): AuthRemoteDataSource
 }

@@ -2,9 +2,9 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.compose.compiler)
-    id("com.google.devtools.ksp")
-
     id("com.google.dagger.hilt.android")
+    id("kotlin-parcelize")
+    id("com.google.devtools.ksp")
 
 }
 
@@ -41,37 +41,79 @@ android {
 }
 
 dependencies {
-    implementation(projects.shared)
-    implementation(libs.compose.ui)
-    implementation(libs.compose.ui.tooling.preview)
-    implementation(libs.compose.material3)
+    // Kotlin
+    implementation(libs.androidx.core.ktx)
+
+    // Lifecycle
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    // AndroidX Compose
+    implementation(platform(libs.androidx.compose.bom.v2))
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+
+    // Compose Ui
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    debugImplementation(libs.androidx.ui.tooling)
     implementation(libs.androidx.activity.compose)
-    debugImplementation(libs.compose.ui.tooling)
+
+    // Manifest
+    debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Material3
+    implementation(libs.androidx.material3)
+
+    // Test
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
+    // Navigation
+    implementation(libs.accompanist.navigation.animation)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.runtime.ktx)
+
+    // System UI Controller
+    implementation(libs.accompanist.systemuicontroller)
+
+    // Dagger - Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+    ksp(libs.androidx.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     // Retrofit
     implementation(libs.retrofit)
-
-    // Gson converter for Retrofit
+    implementation(libs.converter.moshi)
     implementation(libs.converter.gson)
 
-    // OkHttp for making HTTP requests
+    // OkHttp
     implementation(libs.okhttp)
-
-    // OkHttp Logging Interceptor (optional, for logging HTTP request/response)
     implementation(libs.logging.interceptor)
 
-    // Arrow
-    implementation(libs.arrow.core)
+// Moshi
+    implementation(libs.moshi)
+    ksp(libs.moshi.kotlin.codegen)
 
-    // Room
-    implementation(libs.androidx.room.runtime) // Check for the latest version
-    ksp(libs.androidx.room.compiler) // Use KSP for annotation processing
+    // Kotlin Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
 
-    // For Hilt Dependency Injection
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    ksp(libs.androidx.hilt.compiler)
+    // Paper
+    implementation(libs.paperdb)
 
-    // For ViewModel injection in Compose
-    implementation(libs.androidx.hilt.navigation.compose)
+    // Lottie
+    implementation(libs.lottie.compose)
+
+    // Paging Compose
+    implementation(libs.androidx.paging.runtime)
+    testImplementation(libs.androidx.paging.common)
+    implementation(libs.androidx.paging.compose)
+
+    implementation(libs.coil.compose)
+
 }
