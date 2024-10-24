@@ -43,4 +43,20 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
+
+    // Retrofit
+    implementation(libs.retrofit)
+
+    // Gson converter for Retrofit
+    implementation(libs.converter.gson)
+
+    // OkHttp for making HTTP requests
+    implementation(libs.okhttp)
+
+    // OkHttp Logging Interceptor (optional, for logging HTTP request/response)
+    implementation(libs.logging.interceptor)
+
+    // Arrow
+    implementation(libs.arrow.core)
+
 }
